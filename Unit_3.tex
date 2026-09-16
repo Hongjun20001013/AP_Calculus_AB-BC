@@ -1,0 +1,561 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm, graphicx, hyperref}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{multirow, multicol}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\pagestyle{fancy}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\fancyhead[LO]{JACK Z}
+\fancyhead[RO]{Page \thepage\ of \pageref{LastPage}}
+\usepackage{comment}
+\newtheorem{definition}{Definition}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}  % For creating styled boxes
+\tcbuselibrary{most}
+\usepackage{tcolorbox} % for creating colored or framed text boxes
+\tcbuselibrary{breakable} % allows tcolorboxes to break across pages
+
+\definecolor{examplebg}{RGB}{255, 228, 225} % Light red background
+\tcbuselibrary{theorems} 
+\usepackage{graphicx}
+\usepackage{booktabs} % For better table formatting
+\usepackage{caption} % Essential for \captionof
+\usepackage{tcolorbox} % For creating colored boxes
+\tcbuselibrary{most} % Load most libraries for tcolorbox
+
+\newtcbtheorem[number within=subsection]{Note}{Note}{
+    colback=Black!5,
+    colframe=white!35!black,
+    fonttitle=\bfseries,
+    colbacktitle=blue!85!black,
+    coltitle=white,
+    enhanced,
+    attach boxed title to top left={yshift=-2mm, xshift=2mm},
+    boxed title style={sharp corners},
+    sharp corners
+}{Not}
+
+\newtcbtheorem[number within=subsection]{Definition}{Definition}{
+    colback=blue!5,
+    colframe=blue!35!black,
+    fonttitle=\bfseries,
+    colbacktitle=blue!85!black,
+    coltitle=white,
+    enhanced,
+    attach boxed title to top left={yshift=-2mm, xshift=2mm},
+    boxed title style={sharp corners},
+    sharp corners
+}{def}
+
+\newtcbtheorem[number within=subsection]{mytheorem}{Theorem}{
+    colback=orange!5,      % Background color of the box
+    colframe=orange,     % Border color of the box
+    coltitle=white,     % Color of theorem title
+    colbacktitle=orange!85!black,, % Background color for the title
+    fonttitle=\bfseries,
+    title after break={Theorem \csname the\tcbcounter\endcsname\ -- Continued}, % for continued theorems
+    enhanced,
+    attach boxed title to top left={yshift=-2mm, xshift=2mm},
+    boxed title style={sharp corners, colframe=black},
+    sharp corners,
+    separator sign none % no sign between title and theorem text
+}{thm}
+
+
+\usepackage{lipsum} % 生成示例文本
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % 去掉页眉下方的横线
+\fancyfoot[C]{\textcopyright\ \fcolorbox{purple}{white}{Novel Prep}}
+
+% Define custom colors
+\definecolor{deepblue}{rgb}{0.0, 0.18, 0.39}
+\definecolor{deepred}{rgb}{0.6, 0, 0}
+
+% Define theorem style
+\newtheoremstyle{beautifulthm}
+  {10pt} % Space above
+  {10pt} % Space below
+  {\itshape} % Body font
+  {} % Indent amount
+  {\bfseries\color{deepblue}} % Theorem head font
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec
+
+\theoremstyle{beautifulthm}
+\newtheorem{theorem}{Theorem}[section]
+
+\begin{document}
+
+\title{AP Calculus AB\&BC}
+\author{Hongjun Zeng}
+\maketitle
+
+\lipsum[1-10] 
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Limits and Continuity}
+\section{Differentiation: Definition and Fundamental Properties}
+
+\section{Differentiation: Composite, Implicit, and Inverse Function}
+\newpage
+\subsection{Chain Rule}
+\subsubsection{Chain Rule}
+\begin{mytheorem}{Chain Rule}{}
+
+If \(g\) is differentiable at \(x\) and \(f\) is differentiable at \(g(x)\), then the composite function \(F = f \circ g\) defined by \(F(x) = f(g(x))\) is differentiable at \(x\), and \(F'\) is given by the product:
+
+\[
+\boxed{1} \quad F'(x) = f'(g(x)) \cdot g'(x)
+\]
+
+\noindent
+In Leibniz notation, if \(y = f(u)\) and \(u = g(x)\) are both differentiable functions, then:
+
+\[
+\boxed{2} \quad \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}
+\]
+\end{mytheorem}
+\subsubsection*{Comments on the Proof of the Chain Rule}
+
+Let \(\Delta u\) be the change in \(u\) corresponding to a change of \(\Delta x\) in \(x\), that is,
+\[
+\Delta u = g(x + \Delta x) - g(x).
+\]
+
+Then the corresponding change in \(y\) is
+\[
+\Delta y = f(u + \Delta u) - f(u).
+\]
+
+It is tempting to write
+\[
+\frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+\]
+
+\[
+= \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta u} \cdot \frac{\Delta u}{\Delta x}
+\]
+
+\[
+= \lim_{\Delta u \to 0} \frac{\Delta y}{\Delta u} \cdot \lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x}
+\]
+
+\[
+= \lim_{\Delta u \to 0} \frac{\Delta y}{\Delta u} \cdot \lim_{\Delta x \to 0} \frac{\Delta u}{\Delta x}
+\]
+
+\[
+= \frac{dy}{du} \cdot \frac{du}{dx}.
+\]
+
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE : Find the Derivative of the function}, fonttitle=\bfseries, sharp corners]
+
+Find \(F'(x)\) if \(F(x) = \sqrt{x^2 + 1}\).
+
+\tcblower
+\textbf{Solution:}
+At the beginning of this section, we expressed \(F\) as:
+\[
+F(x) = (f \circ g)(x) = f(g(x)) \quad \text{where } f(u) = \sqrt{u} \text{ and } g(x) = x^2 + 1.
+\]
+
+Since
+\[
+f'(u) = \frac{1}{2} u^{-1/2} = \frac{1}{2\sqrt{u}} \quad \text{and} \quad g'(x) = 2x,
+\]
+
+we have
+\[
+F'(x) = f'(g(x)) \cdot g'(x)
+\]
+
+\[
+F'(x) = \frac{1}{2\sqrt{x^2 + 1}} \cdot 2x = \frac{x}{\sqrt{x^2 + 1}}.
+\]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE 2 : Find the Derivative of the function}, fonttitle=\bfseries, sharp corners]
+
+
+Find the derivative of the function:
+\[
+g(t) = \left( \frac{t - 2}{2t + 1} \right)^9
+\]
+
+\tcblower
+\textbf{Solution:}
+Combining the Power Rule, Chain Rule, and Quotient Rule, we get:
+\[
+g'(t) = 9 \left( \frac{t - 2}{2t + 1} \right)^8 \cdot \frac{d}{dt} \left( \frac{t - 2}{2t + 1} \right)
+\]
+
+Using the Quotient Rule:
+\[
+g'(t) = 9 \left( \frac{t - 2}{2t + 1} \right)^8 \cdot \frac{(2t + 1) \cdot 1 - 2(t - 2)}{(2t + 1)^2}
+\]
+
+Simplify:
+\[
+g'(t) = 9 \left( \frac{t - 2}{2t + 1} \right)^8 \cdot \frac{2t + 1 - 2t + 4}{(2t + 1)^2}
+\]
+
+\[
+g'(t) = 9 \left( \frac{t - 2}{2t + 1} \right)^8 \cdot \frac{5}{(2t + 1)^2}
+\]
+
+Simplify further:
+\[
+g'(t) = \frac{45(t - 2)^8}{(2t + 1)^{10}}
+\]
+
+\end{tcolorbox}
+
+\subsubsection{Derivatives of General Exponential Functions}
+We can use the Chain Rule to differentiate an exponential function with any base \(b > 0\). Recall the equation:
+\[
+b^x = e^{(\ln b)x}
+\]
+
+and then the Chain Rule gives:
+\[
+\frac{d}{dx}\left(b^x\right) = \frac{d}{dx} \left(e^{(\ln b)x}\right) = e^{(\ln b)x} \cdot \frac{d}{dx} \big[(\ln b)x\big]
+\]
+
+\[
+= e^{(\ln b)x} \cdot (\ln b) = b^x \ln b
+\]
+
+because \(\ln b\) is a constant. So we have the formula:
+\[
+\boxed{\frac{d}{dx}\left(b^x\right) = b^x \ln b}
+\]
+
+
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE 2 : Find the Derivative of the function}, fonttitle=\bfseries, sharp corners]
+
+Find the derivative of each of the functions:
+\[
+(a) \ g(x) = 2^x \quad \quad (b) \ h(x) = 5^{x^2}
+\]
+\tcblower
+\textbf{Solution:}
+\subsubsection*{(a)}
+
+We use Formula 5 with \(b = 2\):
+\[
+g'(x) = \frac{d}{dx} \left(2^x\right) = 2^x \ln 2
+\]
+
+This is consistent with the estimate
+\[
+\frac{d}{dx} \left(2^x\right) \approx (0.693)2^x
+\]
+
+we gave in Section 3.1 because \(\ln 2 \approx 0.693147\).
+
+\subsubsection*{(b)}
+
+The outer function is an exponential function, and the inner function is the squaring function, so we use Formula 5 and the Chain Rule to get:
+\[
+h'(x) = \frac{d}{dx} \left(5^{x^2}\right) = 5^{x^2} \ln 5 \cdot \frac{d}{dx} \left(x^2\right)
+\]
+
+\[
+h'(x) = 5^{x^2} \ln 5 \cdot 2x = 2x \cdot 5^{x^2} \ln 5
+\]
+
+\end{tcolorbox}
+
+\newpage
+\subsection{Implicit Differentiation}
+\subsubsection{Implicit and Explicit Function}
+Up to this point in the text, most functions have been expressed in \textbf{explicit form}. For example, in the equation \(y = 3x^2 - 5\), the variable \(y\) is explicitly written as a function of \(x\). Some functions, however, are only implied by an equation. For instance, the function \(y = 1/x\) is defined \textbf{implicitly} by the equation
+\[
+xy = 1. \quad \textcolor{magenta}{\text{Implicit form}}
+\]
+
+To find \(\frac{dy}{dx}\) for this equation, you can write \(y\) explicitly as a function of \(x\) and then differentiate.
+
+\[
+\begin{array}{|c|c|c|}
+\hline
+\textbf{Implicit Form} & \textbf{Explicit Form} & \textbf{Derivative} \\
+\hline
+xy = 1 & y = \frac{1}{x} = x^{-1} & \frac{dy}{dx} = -x^{-2} = -\frac{1}{x^2} \\
+\hline
+\end{array}
+\]
+
+From some function, you cannot use this procedure when you are unable to solve for \(y\) as a function of \(x\). For instance, how would you find \(\frac{dy}{dx}\) for the equation
+\[
+x^2 - 2y^3 + 4y = 2?
+\]
+
+For this equation, it is difficult to express \(y\) as a function of \(x\) explicitly. To find \(\frac{dy}{dx}\), you can use \textbf{implicit differentiation}.
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE 1 : Differentiating with Respect to x}, fonttitle=\bfseries, sharp corners]
+
+\noindent
+\textbf{a.} \quad \(\frac{d}{dx}\left[x^3\right] = 3x^2\)
+
+
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{b.} \quad \(\frac{d}{dx}\left[y^3\right] = 3y^2 \frac{dy}{dx}\)
+
+
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{c.} \quad \(\frac{d}{dx}\left[x + 3y\right] = 1 + 3\frac{dy}{dx}\)
+
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{d.} \quad \(\frac{d}{dx}\left[xy^2\right] = x \frac{d}{dx}\left[y^2\right] + y^2 \frac{d}{dx}[x]\)
+
+
+
+\[
+= x\left(2y \frac{dy}{dx}\right) + y^2(1)
+\]
+
+\[
+= 2xy \frac{dy}{dx} + y^2
+\]
+
+\end{tcolorbox}
+
+
+\subsubsection{Implicit Differentiation}
+\begin{Note}{Guidelines for Implicit Differentiation}{}
+
+\begin{enumerate}
+    \item Differentiate both sides of the equation \textit{with respect to \(x\)}.
+    \item Collect all terms involving \(\frac{dy}{dx}\) on the left side of the equation and move all other terms to the right side of the equation.
+    \item Factor \(\frac{dy}{dx}\) out of the left side of the equation.
+    \item Solve for \(\frac{dy}{dx}\).
+\end{enumerate}
+\end{Note}
+
+
+
+
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE : Find the Derivative of the function}, fonttitle=\bfseries, sharp corners]
+
+Determine the slope of the graph of 
+\[
+3(x^2 + y^2)^2 = 100xy
+\]
+at the point \((3, 1)\).
+
+\tcblower
+\textbf{Solution:}
+\[
+\frac{d}{dx} \left[3(x^2 + y^2)^2 \right] = \frac{d}{dx} \left[100xy \right]
+\]
+
+\[
+3(2)(x^2 + y^2)\left(2x + 2y\frac{dy}{dx}\right) = 100\left[x\frac{dy}{dx} + y(1)\right]
+\]
+
+\[
+12y(x^2 + y^2)\frac{dy}{dx} - 100x\frac{dy}{dx} = 100y - 12x(x^2 + y^2)
+\]
+
+\[
+\left[12y(x^2 + y^2) - 100x\right]\frac{dy}{dx} = 100y - 12x(x^2 + y^2)
+\]
+
+\[
+\frac{dy}{dx} = \frac{100y - 12x(x^2 + y^2)}{-100x + 12y(x^2 + y^2)}
+\]
+
+At the point \((3, 1)\), the slope of the graph is:
+\[
+\frac{dy}{dx} = \frac{25(1) - 3(3)(3^2 + 1^2)}{-25(3) + 3(1)(3^2 + 1^2)}
+\]
+
+\[
+= \frac{25 - 90}{-75 + 30} = \frac{-65}{-45} = \frac{13}{9}.
+\]
+
+\end{tcolorbox}
+\newpage
+\subsection{Derivative of Inverse Function}
+\begin{mytheorem}{Derivative of Inverse Function}{}
+Let $f(x)$ be a function that is both invertible and differentiable. Let $y = f^{-1}(x)$ be the inverse of $f(x)$. For all $x$ satisfying $f'(f^{-1}(x)) \neq 0$, the derivative of the inverse function is given by:
+\[
+\frac{dy}{dx} = \frac{d}{dx}(f^{-1}(x)) = (f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))}.
+\]
+Alternatively, if $y = g(x)$ is the inverse of $f(x)$, then:
+\[
+g'(x) = \frac{1}{f'(g(x))}.
+\]
+\end{mytheorem}
+
+
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE 1: Find the Derivative of the function}, fonttitle=\bfseries, sharp corners]
+
+Suppose\( f(x) = x^5 + 2x^3 + 7x + 1 \). \text{Find} \( (f^{-1})'(1) \).
+
+\tcblower
+\textbf{Solution:}
+First, we should show that \( f^{-1} \) exists (i.e., that \( f \) is one-to-one). In this case, the derivative \( f'(x) = 5x^4 + 6x^2 + 7 \) is strictly greater than 0 for all \( x \), so \( f \) is strictly increasing and thus one-to-one.
+
+It's difficult to find the inverse of \( f(x) \) (and then take the derivative). Thus, we use the above formula evaluated at 1:
+\[
+(f^{-1})'(1) = \frac{1}{f'\left(f^{-1}(1)\right)}.
+\]
+Note that to use this formula we need to know what \( f^{-1}(1) \) is, and the derivative \( f'(x) \). To find \( f^{-1}(1) \) we make a table of values (plugging in \( x = -3, -2, -1, 0, 1, 2, 3 \) into \( f(x) \)) and see what value of \( x \) gives 1. We omit the table and simply observe that \( f(0) = 1 \). Thus,
+\[
+f^{-1}(1) = 0.
+\]
+Now we have:
+\[
+(f^{-1})'(1) = \frac{1}{f'(0)}.
+\]
+And so, \( f'(0) = 7 \). Therefore,
+\[
+(f^{-1})'(1) = \frac{1}{7}.
+\]
+
+
+\end{tcolorbox}
+
+
+
+
+
+
+\newpage
+\subsection{Differentiating Inverse Functions}
+
+\begin{Note}{Differentiating Inverse Functions}{}
+
+\[
+\begin{array}{ccc}
+\frac{d}{dx} (\sin^{-1} x) = \frac{1}{\sqrt{1 - x^2}}, & \quad \frac{d}{dx} (\cos^{-1} x) = -\frac{1}{\sqrt{1 - x^2}}, & \quad \frac{d}{dx} (\tan^{-1} x) = \frac{1}{1 + x^2}, \\
+\frac{d}{dx} (\csc^{-1} x) = -\frac{1}{x\sqrt{x^2 - 1}}, & \quad \frac{d}{dx} (\sec^{-1} x) = \frac{1}{x\sqrt{x^2 - 1}}, & \quad \frac{d}{dx} (\cot^{-1} x) = -\frac{1}{1 + x^2}
+\end{array}
+\]
+
+\end{Note}
+
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE 1: Using a Tangent Line Approximation}, fonttitle=\bfseries, sharp corners]
+Differentiate \\
+(a) \( y = \frac{1}{\sin^{-1} x} \) \\
+(b) \( f(x) = x \arctan \sqrt{x} \).
+
+\tcblower
+
+\subsection*{SOLUTION}
+\textbf{(a)} Given \( y = \frac{1}{\sin^{-1} x} \), we find the derivative:
+\[
+\frac{dy}{dx} = \frac{d}{dx} \left( (\sin^{-1} x)^{-1} \right) = -(\sin^{-1} x)^{-2} \cdot \frac{d}{dx} (\sin^{-1} x)
+\]
+\[
+= -\frac{1}{(\sin^{-1} x)^2} \cdot \frac{1}{\sqrt{1 - x^2}}
+\]
+\[
+= -\frac{1}{(\sin^{-1} x)^2 \sqrt{1 - x^2}}
+\]
+
+\textbf{(b)} For \( f(x) = x \arctan \sqrt{x} \), we apply the product and chain rules:
+\[
+f'(x) = \frac{d}{dx} \left( x \arctan \sqrt{x} \right) = x \cdot \frac{d}{dx}(\arctan \sqrt{x}) + \arctan \sqrt{x} \cdot \frac{d}{dx}(x)
+\]
+\[
+= x \cdot \left( \frac{1}{1 + (\sqrt{x})^2} \cdot \frac{1}{2\sqrt{x}} \right) + \arctan \sqrt{x}
+\]
+\[
+= \frac{x}{2\sqrt{x}(1+x)} + \arctan \sqrt{x}
+\]
+\[
+= \frac{\sqrt{x}}{2(1+x)} + \arctan \sqrt{x}
+\]
+
+\end{tcolorbox}
+
+
+\newpage
+\subsection{Higher Order Derivative}
+\textbf{Higher-order derivatives} are simply the derivative of a derivative. You would use the same derivative rules that you learned for finding the first derivative.
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{First derivative} & \(f'(x)\) & \(\frac{dy}{dx}\)  \\
+\hline
+\textbf{Second derivative} & \(f''(x)\) & \(\frac{d^2y}{dx^2}\) \\
+\hline
+\textbf{Third derivative} & \(f'''(x)\) & \(\frac{d^3y}{dx^3}\)  \\
+\hline
+\textbf{Fourth derivative} & \(f^{(4)}(x)\) & \(\frac{d^4y}{dx^4}\) \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{tcolorbox}[colback=examplebg, colframe=red!75!black, title=\textbf{EXAMPLE 2: Derivatives of Trigonometric Functions}, fonttitle=\bfseries, sharp corners]
+
+Find the 27th derivative of \(\cos x\).
+
+\tcblower
+\textbf{Solution:}
+The first few derivatives of \(f(x) = \cos x\) are as follows:
+
+\[
+f'(x) = -\sin x
+\]
+\[
+f''(x) = -\cos x
+\]
+\[
+f'''(x) = \sin x
+\]
+\[
+f^{(4)}(x) = \cos x
+\]
+\[
+f^{(5)}(x) = -\sin x
+\]
+
+We see that the successive derivatives occur in a cycle of length 4, and in particular,
+\[
+f^{(n)}(x) = \cos x \quad \text{whenever } n \text{ is a multiple of 4.}
+\]
+
+Therefore,
+\[
+f^{(24)}(x) = \cos x
+\]
+
+And, differentiating three more times, we have:
+\[
+f^{(27)}(x) = \sin x
+\]
+
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{center}
+{\Huge \textbf{AP Calculus AB}}\\
+{\Large 30-Hour Structured Plan (Ch.3--8 Emphasis on 6-8)}
+\end{center}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+\begin{longtable}{p{1cm} p{3cm} p{8cm}}
+\toprule
+\textbf{\#} & \textbf{Chapter} & \textbf{Topics Covered} \\
+\midrule
+
+1 & Ch 3 & Chain Rule; Exponential Derivatives; Sign Accuracy \\
+2 & Ch 3 & Implicit Differentiation; Inverse Function Derivative \\
+
+3 & Ch 4 & Motion Problems; Interpreting Derivatives; Units \\
+4 & Ch 4 & Related Rates; Linear Approximation \\
+
+5 & Ch 5 & Rolle's Theorem; Mean Value Theorem; Preconditions \\
+6 & Ch 5 & Extrema; First/Second Derivative Test; Graph Sketching \\
+
+7 & Ch 6 & Riemann Sums; Definite Integrals; Area Interpretation \\
+8 & Ch 6 & Fundamental Theorem of Calculus (Part 1) Accumulation Functions \\
+9 & Ch 6 & Fundamental Theorem of Calculus (Part 2); Net Change \\
+10 & Ch 6 & Antiderivatives; Basic Integration Rules; Substitution (Indefinite) \\
+11 & Ch 6 & Substitution (Definite); Improper Integrals; Mixed Practice \\
+
+12 & Ch 7 & Differential Equations; Slope Fields; Separation of Variables \\
+13 & Ch 7 & Exponential Models; Logistic Models; Initial Conditions \\
+
+14 & Ch 8 & Area Between Curves; Integrating Velocity to Position \\
+15 & Ch 8 & Volume (Disk/Washer); AP Free Response Style Review \\
+
+\bottomrule
+\end{longtable}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+\newpage
+\section*{Teaching Structure Per Session}
+
+\begin{itemize}
+\item 30 min Concept
+\item 50 min Guided Practice
+\item 20 min AP-style Problems
+\item 20 min Error Analysis
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Emphasis:} Heavy reinforcement on FTC, Accumulation Functions, Volume, and Differential Equations.
+
+\end{document}

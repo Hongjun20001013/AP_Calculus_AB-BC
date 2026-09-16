@@ -1,0 +1,1766 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.72in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{multicol}
+\usepackage{mathtools}
+
+% =========================
+% Novel Prep Colors
+% =========================
+\definecolor{novelPurple}{RGB}{98,54,255}
+\definecolor{novelPurpleDark}{RGB}{76,42,204}
+\definecolor{novelLight}{RGB}{242,238,255}
+\definecolor{novelSoft}{RGB}{248,246,255}
+\definecolor{darkGray}{RGB}{45,45,45}
+
+% =========================
+% Header / Footer
+% =========================
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{novelPurpleDark}{\textbf{Novel Prep Learning Center}}}
+\rhead{\textcolor{novelPurpleDark}{\textbf{AP Calculus AB \& BC Final Review}}}
+\cfoot{\textcolor{novelPurpleDark}{\thepage\ of \pageref{LastPage}}}
+\setlength{\headheight}{14pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.42em}
+\renewcommand{\arraystretch}{1.18}
+
+% =========================
+% Boxes
+% =========================
+\newtcolorbox{unitbox}[1]{
+  colback=novelLight,
+  colframe=novelPurpleDark,
+  title=\textbf{#1},
+  fonttitle=\bfseries,
+  coltitle=white,
+  colbacktitle=novelPurpleDark,
+  boxrule=0.85pt,
+  arc=2pt,
+  left=8pt,right=8pt,top=7pt,bottom=7pt
+}
+
+\newtcolorbox{formulabox}[1]{
+  colback=white,
+  colframe=novelPurple,
+  title=\textbf{#1},
+  fonttitle=\bfseries,
+  coltitle=white,
+  colbacktitle=novelPurple,
+  boxrule=0.85pt,
+  arc=1.5pt,
+  left=8pt,right=8pt,top=7pt,bottom=7pt
+}
+
+\newtcolorbox{warningbox}[1]{
+  colback=novelSoft,
+  colframe=novelPurpleDark,
+  title=\textbf{#1},
+  fonttitle=\bfseries,
+  coltitle=white,
+  colbacktitle=novelPurpleDark,
+  boxrule=0.85pt,
+  arc=1.5pt,
+  left=8pt,right=8pt,top=7pt,bottom=7pt
+}
+
+\newcommand{\sectiontitle}[1]{
+\vspace{0.8em}
+{\Large\textcolor{novelPurpleDark}{\textbf{#1}}}
+\vspace{0.35em}
+\hrule
+\vspace{0.8em}
+}
+
+\newcommand{\subtopic}[1]{
+\vspace{0.45em}
+\textcolor{novelPurpleDark}{\textbf{#1}}
+}
+
+\begin{document}
+
+% =====================================================
+% COVER
+% =====================================================
+
+\begin{center}
+    {\Huge \textbf{\textcolor{novelPurpleDark}{AP Calculus AB \& BC}}}\\[0.25em]
+    {\LARGE \textbf{Complete Knowledge \& Formula Summary}}\\[0.5em]
+    {\large Novel Prep Learning Center}\\[0.4em]
+    {\normalsize Optimized AB / BC Separated Review Sheet}
+\end{center}
+
+\vspace{0.6em}
+
+\begin{unitbox}{Purpose of This Summary}
+This handout is designed for students who need a fast but complete AP Calculus review.  
+Instead of rereading every unit from the beginning, students can use this document to rebuild the full knowledge structure, memorize core formulas, and identify missing topics quickly.
+
+\medskip
+
+\textbf{Important separation:}
+\begin{itemize}[leftmargin=1.5em]
+\item \textbf{AP Calculus AB Core:} Units 1--8 main concepts.
+\item \textbf{AP Calculus BC Core:} all AB topics plus BC-only extensions, Unit 9, and Unit 10.
+\item \textbf{BC-only topics placed separately:} logistic differential equations, Euler's Method, advanced integration techniques, parametric, polar, vector-valued functions, and infinite series.
+\end{itemize}
+\end{unitbox}
+
+\newpage
+
+% =====================================================
+% AB SECTION
+% =====================================================
+
+\sectiontitle{Part I: AP Calculus AB Core Summary}
+
+% =====================================================
+\begin{unitbox}{AB Unit 1: Limits and Continuity}
+\textbf{Big Idea:} A limit describes the behavior of a function as \(x\) approaches a value, not necessarily the value of the function at that point.
+\end{unitbox}
+
+\subtopic{1. Limit Notation}
+
+\[
+\lim_{x\to a} f(x)=L
+\]
+
+This means that as \(x\) gets closer to \(a\), the function values \(f(x)\) get closer to \(L\).
+
+\subtopic{2. One-Sided Limits}
+
+\[
+\lim_{x\to a^-}f(x)
+\qquad
+\lim_{x\to a^+}f(x)
+\]
+
+A two-sided limit exists only if
+
+\[
+\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)
+\]
+
+\subtopic{3. Continuity at a Point}
+
+A function \(f\) is continuous at \(x=a\) if:
+
+\[
+f(a)\text{ exists}
+\]
+
+\[
+\lim_{x\to a}f(x)\text{ exists}
+\]
+
+\[
+\lim_{x\to a}f(x)=f(a)
+\]
+
+\subtopic{4. Types of Discontinuities}
+
+\begin{itemize}[leftmargin=1.5em]
+\item \textbf{Removable discontinuity:} hole in the graph.
+\item \textbf{Jump discontinuity:} left and right limits are different.
+\item \textbf{Infinite discontinuity:} function approaches \(\pm\infty\).
+\end{itemize}
+
+\subtopic{5. Algebraic Limit Techniques}
+
+\begin{itemize}[leftmargin=1.5em]
+\item Direct substitution
+\item Factoring and canceling
+\item Rationalizing
+\item Combining fractions
+\item Squeeze Theorem
+\end{itemize}
+
+\begin{formulabox}{Squeeze Theorem}
+If
+\[
+g(x)\le f(x)\le h(x)
+\]
+near \(x=a\), and
+
+\[
+\lim_{x\to a}g(x)=\lim_{x\to a}h(x)=L,
+\]
+
+then
+
+\[
+\lim_{x\to a}f(x)=L.
+\]
+\end{formulabox}
+
+\subtopic{6. Limits at Infinity and Horizontal Asymptotes}
+
+For rational functions:
+
+\[
+\lim_{x\to\infty}\frac{P(x)}{Q(x)}
+\]
+
+compare the highest powers.
+
+\[
+\deg P<\deg Q \Rightarrow y=0
+\]
+
+\[
+\deg P=\deg Q \Rightarrow y=\frac{\text{leading coefficient of }P}{\text{leading coefficient of }Q}
+\]
+
+\[
+\deg P>\deg Q \Rightarrow \text{no horizontal asymptote}
+\]
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{AB Unit 2: Derivative Definition and Basic Rules}
+\textbf{Big Idea:} The derivative measures instantaneous rate of change and slope of the tangent line.
+\end{unitbox}
+
+\subtopic{1. Derivative Definition}
+
+\[
+f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+\]
+
+Alternative form:
+
+\[
+f'(a)=\lim_{x\to a}\frac{f(x)-f(a)}{x-a}
+\]
+
+\subtopic{2. Tangent Line Equation}
+
+If a function passes through \((a,f(a))\) and has slope \(f'(a)\), then
+
+\[
+y-f(a)=f'(a)(x-a)
+\]
+
+\subtopic{3. Basic Derivative Rules}
+
+\[
+\frac{d}{dx}[c]=0
+\]
+
+\[
+\frac{d}{dx}[x^n]=nx^{n-1}
+\]
+
+\[
+\frac{d}{dx}[cf(x)]=cf'(x)
+\]
+
+\[
+\frac{d}{dx}[f(x)\pm g(x)]=f'(x)\pm g'(x)
+\]
+
+\subtopic{4. Trigonometric Derivatives}
+
+\[
+\frac{d}{dx}(\sin x)=\cos x
+\]
+
+\[
+\frac{d}{dx}(\cos x)=-\sin x
+\]
+
+\[
+\frac{d}{dx}(\tan x)=\sec^2 x
+\]
+
+\[
+\frac{d}{dx}(\sec x)=\sec x\tan x
+\]
+
+\[
+\frac{d}{dx}(\csc x)=-\csc x\cot x
+\]
+
+\[
+\frac{d}{dx}(\cot x)=-\csc^2 x
+\]
+
+\subtopic{5. Product and Quotient Rules}
+
+\[
+(uv)'=u'v+uv'
+\]
+
+\[
+\left(\frac{u}{v}\right)'=\frac{u'v-uv'}{v^2}
+\]
+
+\begin{warningbox}{Common Mistake}
+The product rule is not
+\[
+(uv)'=u'v'.
+\]
+Always use
+\[
+u'v+uv'.
+\]
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{AB Unit 3: Composite, Implicit, and Inverse Function Derivatives}
+\textbf{Big Idea:} Unit 3 handles functions with layers, hidden variables, and inverse relationships.
+\end{unitbox}
+
+\subtopic{1. Chain Rule}
+
+\[
+\frac{d}{dx}f(g(x))=f'(g(x))g'(x)
+\]
+
+Common forms:
+
+\[
+\frac{d}{dx}(u^n)=nu^{n-1}u'
+\]
+
+\[
+\frac{d}{dx}(\sin u)=\cos u\cdot u'
+\]
+
+\[
+\frac{d}{dx}(e^u)=e^u u'
+\]
+
+\[
+\frac{d}{dx}(\ln u)=\frac{u'}{u}
+\]
+
+\subtopic{2. Exponential and Logarithmic Derivatives}
+
+\[
+\frac{d}{dx}(e^x)=e^x
+\]
+
+\[
+\frac{d}{dx}(a^x)=a^x\ln a
+\]
+
+\[
+\frac{d}{dx}(\ln x)=\frac1x
+\]
+
+\[
+\frac{d}{dx}(\log_a x)=\frac1{x\ln a}
+\]
+
+\subtopic{3. Implicit Differentiation}
+
+When \(y\) is not solved explicitly as a function of \(x\), differentiate both sides with respect to \(x\).
+
+Important rule:
+
+\[
+\frac{d}{dx}(y^n)=ny^{n-1}\frac{dy}{dx}
+\]
+
+Example structure:
+
+\[
+x^2+y^2=25
+\]
+
+\[
+2x+2y\frac{dy}{dx}=0
+\]
+
+\[
+\frac{dy}{dx}=-\frac{x}{y}
+\]
+
+\subtopic{4. Derivative of an Inverse Function}
+
+\[
+(f^{-1})'(a)=\frac{1}{f'(f^{-1}(a))}
+\]
+
+Equivalent idea:
+
+If \(f(b)=a\), then
+
+\[
+(f^{-1})'(a)=\frac{1}{f'(b)}
+\]
+
+\begin{warningbox}{Common Mistake}
+For inverse derivative problems, students often plug into the wrong function.  
+Always find the original \(x\)-value first.
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{AB Unit 4: Contextual Applications of Differentiation}
+\textbf{Big Idea:} Derivatives describe rates, motion, approximation, and relationships between changing quantities.
+\end{unitbox}
+
+\subtopic{1. Units of the Derivative}
+
+If \(y=f(x)\), then
+
+\[
+f'(x)=\frac{\text{units of }y}{\text{units of }x}
+\]
+
+Example: If position is in feet and time is in seconds, velocity is measured in feet per second.
+
+\subtopic{2. Motion}
+
+If \(s(t)\) is position, then
+
+\[
+v(t)=s'(t)
+\]
+
+\[
+a(t)=v'(t)=s''(t)
+\]
+
+\[
+\text{speed}=|v(t)|
+\]
+
+\subtopic{3. Increasing and Decreasing Motion}
+
+\[
+v(t)>0 \Rightarrow \text{moving right/up}
+\]
+
+\[
+v(t)<0 \Rightarrow \text{moving left/down}
+\]
+
+\[
+a(t)>0 \Rightarrow v(t)\text{ increasing}
+\]
+
+\[
+a(t)<0 \Rightarrow v(t)\text{ decreasing}
+\]
+
+\subtopic{4. Speeding Up and Slowing Down}
+
+\[
+v(t)\text{ and }a(t)\text{ same sign} \Rightarrow \text{speeding up}
+\]
+
+\[
+v(t)\text{ and }a(t)\text{ opposite signs} \Rightarrow \text{slowing down}
+\]
+
+\subtopic{5. Related Rates}
+
+General process:
+
+\begin{enumerate}[leftmargin=1.5em]
+\item Draw a diagram.
+\item Write an equation relating the variables.
+\item Differentiate both sides with respect to time.
+\item Substitute known values after differentiating.
+\item Solve for the requested rate.
+\end{enumerate}
+
+\subtopic{6. Linear Approximation}
+
+\[
+L(x)=f(a)+f'(a)(x-a)
+\]
+
+Differential form:
+
+\[
+dy=f'(x)dx
+\]
+
+\subtopic{7. L'Hospital's Rule}
+
+For indeterminate forms
+
+\[
+\frac00
+\qquad\text{or}\qquad
+\frac{\infty}{\infty},
+\]
+
+if conditions are satisfied, then
+
+\[
+\lim_{x\to a}\frac{f(x)}{g(x)}
+=
+\lim_{x\to a}\frac{f'(x)}{g'(x)}
+\]
+
+\begin{warningbox}{Common Mistake}
+Do not use L'Hospital's Rule unless the expression is actually an indeterminate form.
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{AB Unit 5: Analytical Applications of Differentiation}
+\textbf{Big Idea:} Derivatives describe the shape, behavior, and optimization of functions.
+\end{unitbox}
+
+\subtopic{1. Critical Numbers}
+
+Critical numbers occur where
+
+\[
+f'(x)=0
+\]
+
+or
+
+\[
+f'(x)\text{ is undefined}
+\]
+
+provided \(x\) is in the domain of \(f\).
+
+\subtopic{2. Extreme Value Theorem}
+
+If \(f\) is continuous on a closed interval \([a,b]\), then \(f\) has an absolute maximum and absolute minimum on \([a,b]\).
+
+\subtopic{3. Rolle's Theorem}
+
+If \(f\) is continuous on \([a,b]\), differentiable on \((a,b)\), and
+
+\[
+f(a)=f(b),
+\]
+
+then there exists \(c\in(a,b)\) such that
+
+\[
+f'(c)=0.
+\]
+
+\subtopic{4. Mean Value Theorem}
+
+If \(f\) is continuous on \([a,b]\) and differentiable on \((a,b)\), then there exists \(c\in(a,b)\) such that
+
+\[
+f'(c)=\frac{f(b)-f(a)}{b-a}.
+\]
+
+\subtopic{5. Increasing and Decreasing}
+
+\[
+f'(x)>0 \Rightarrow f\text{ increasing}
+\]
+
+\[
+f'(x)<0 \Rightarrow f\text{ decreasing}
+\]
+
+\subtopic{6. First Derivative Test}
+
+\[
+f':+\to - \Rightarrow \text{relative maximum}
+\]
+
+\[
+f':-\to + \Rightarrow \text{relative minimum}
+\]
+
+\subtopic{7. Concavity}
+
+\[
+f''(x)>0 \Rightarrow \text{concave up}
+\]
+
+\[
+f''(x)<0 \Rightarrow \text{concave down}
+\]
+
+\subtopic{8. Inflection Points}
+
+A point of inflection occurs where concavity changes.
+
+Usually check candidates where
+
+\[
+f''(x)=0
+\]
+
+or
+
+\[
+f''(x)\text{ is undefined}.
+\]
+
+\subtopic{9. Second Derivative Test}
+
+If \(f'(c)=0\), then:
+
+\[
+f''(c)>0 \Rightarrow \text{relative minimum}
+\]
+
+\[
+f''(c)<0 \Rightarrow \text{relative maximum}
+\]
+
+\[
+f''(c)=0 \Rightarrow \text{test inconclusive}
+\]
+
+\subtopic{10. Optimization}
+
+General process:
+
+\begin{enumerate}[leftmargin=1.5em]
+\item Define variables.
+\item Write the quantity to maximize or minimize.
+\item Use constraints to write one-variable function.
+\item Find critical points.
+\item Check endpoints if interval is closed.
+\item Interpret final answer in context.
+\end{enumerate}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{AB Unit 6: Integration and Accumulation}
+\textbf{Big Idea:} Integration turns local rate of change into total accumulated change.
+\end{unitbox}
+
+\subtopic{1. Riemann Sums}
+
+Approximate area:
+
+\[
+\sum_{i=1}^n f(x_i^*)\Delta x
+\]
+
+where
+
+\[
+\Delta x=\frac{b-a}{n}
+\]
+
+\subtopic{2. Definite Integral}
+
+\[
+\int_a^b f(x)\,dx
+\]
+
+represents signed area or accumulated change.
+
+\subtopic{3. Fundamental Theorem of Calculus Part 1}
+
+If
+
+\[
+F(x)=\int_a^x f(t)\,dt,
+\]
+
+then
+
+\[
+F'(x)=f(x).
+\]
+
+More generally:
+
+\[
+\frac{d}{dx}\int_a^{g(x)} f(t)\,dt=f(g(x))g'(x)
+\]
+
+\[
+\frac{d}{dx}\int_{g(x)}^{h(x)} f(t)\,dt=f(h(x))h'(x)-f(g(x))g'(x)
+\]
+
+\subtopic{4. Fundamental Theorem of Calculus Part 2}
+
+If \(F'(x)=f(x)\), then
+
+\[
+\int_a^b f(x)\,dx=F(b)-F(a)
+\]
+
+\subtopic{5. Basic Antiderivatives}
+
+\[
+\int x^n\,dx=\frac{x^{n+1}}{n+1}+C,\qquad n\neq -1
+\]
+
+\[
+\int \frac1x\,dx=\ln|x|+C
+\]
+
+\[
+\int e^x\,dx=e^x+C
+\]
+
+\[
+\int a^x\,dx=\frac{a^x}{\ln a}+C
+\]
+
+\[
+\int \cos x\,dx=\sin x+C
+\]
+
+\[
+\int \sin x\,dx=-\cos x+C
+\]
+
+\[
+\int \sec^2x\,dx=\tan x+C
+\]
+
+\subtopic{6. \(u\)-Substitution}
+
+If \(u=g(x)\), then \(du=g'(x)\,dx\).
+
+\[
+\int f(g(x))g'(x)\,dx=\int f(u)\,du
+\]
+
+\begin{warningbox}{AB / BC Separation}
+In this optimized version, AB Unit 6 includes basic antiderivatives and \(u\)-substitution.  
+The following advanced integration techniques are moved to BC-only:
+\[
+\text{long division, completing the square, integration by parts, partial fractions, improper integrals.}
+\]
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{AB Unit 7: Differential Equations}
+\textbf{Big Idea:} A differential equation tells how a function changes.
+\end{unitbox}
+
+\subtopic{1. Differential Equations}
+
+A differential equation involves a function and its derivative.
+
+Example:
+
+\[
+\frac{dy}{dx}=ky
+\]
+
+means the rate of change of \(y\) is proportional to \(y\).
+
+\subtopic{2. Verifying Solutions}
+
+To verify a solution:
+
+\begin{enumerate}[leftmargin=1.5em]
+\item Differentiate the proposed function.
+\item Substitute into the differential equation.
+\item Check the initial condition if given.
+\end{enumerate}
+
+\subtopic{3. Slope Fields}
+
+A slope field shows small tangent segments representing
+
+\[
+\frac{dy}{dx}
+\]
+
+at many points.
+
+\subtopic{4. Separation of Variables}
+
+If the equation can be written as
+
+\[
+\frac{dy}{dx}=g(x)h(y),
+\]
+
+then separate:
+
+\[
+\frac{1}{h(y)}\,dy=g(x)\,dx
+\]
+
+and integrate both sides.
+
+\subtopic{5. Exponential Growth and Decay}
+
+\[
+\frac{dy}{dt}=ky
+\]
+
+has solution
+
+\[
+y=Ce^{kt}
+\]
+
+If \(k>0\), growth.  
+If \(k<0\), decay.
+
+\begin{warningbox}{BC-only Topics Removed from AB Unit 7}
+Euler's Method and logistic differential equations are listed in the BC-only section below.
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{AB Unit 8: Applications of Integration}
+\textbf{Big Idea:} Definite integrals measure average value, accumulation, area, and volume.
+\end{unitbox}
+
+\subtopic{1. Average Value of a Function}
+
+\[
+f_{\text{avg}}=\frac{1}{b-a}\int_a^b f(x)\,dx
+\]
+
+\subtopic{2. Net Change}
+
+If \(r(t)\) is a rate, then
+
+\[
+\int_a^b r(t)\,dt
+\]
+
+gives net change.
+
+\subtopic{3. Motion with Integrals}
+
+\[
+\text{displacement}=\int_a^b v(t)\,dt
+\]
+
+\[
+\text{total distance}=\int_a^b |v(t)|\,dt
+\]
+
+\[
+v(t)=v(a)+\int_a^t a(s)\,ds
+\]
+
+\[
+s(t)=s(a)+\int_a^t v(s)\,ds
+\]
+
+\subtopic{4. Area Between Curves}
+
+With respect to \(x\):
+
+\[
+A=\int_a^b [\text{top}-\text{bottom}]\,dx
+\]
+
+With respect to \(y\):
+
+\[
+A=\int_c^d [\text{right}-\text{left}]\,dy
+\]
+
+\subtopic{5. Volumes by Cross Sections}
+
+\[
+V=\int_a^b A(x)\,dx
+\]
+
+Common cross-sectional areas:
+
+\[
+\text{square: }A=s^2
+\]
+
+\[
+\text{semicircle: }A=\frac{\pi}{8}s^2
+\]
+
+\[
+\text{equilateral triangle: }A=\frac{\sqrt3}{4}s^2
+\]
+
+\subtopic{6. Disk and Washer Method}
+
+Disk:
+
+\[
+V=\pi\int_a^b R(x)^2\,dx
+\]
+
+Washer:
+
+\[
+V=\pi\int_a^b \left(R(x)^2-r(x)^2\right)\,dx
+\]
+
+\begin{warningbox}{Common Mistake}
+For washer method, do not subtract radii first.  
+The correct structure is
+
+\[
+\pi\int (R^2-r^2)\,dx
+\]
+
+not
+
+\[
+\pi\int (R-r)^2\,dx.
+\]
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+% BC SECTION
+% =====================================================
+
+\sectiontitle{Part II: AP Calculus BC-Only Summary}
+
+\begin{unitbox}{BC Overview}
+AP Calculus BC includes all AB content plus additional topics involving advanced integration, differential equation approximation, parametric / polar / vector-valued calculus, and infinite series.
+
+\medskip
+
+The following sections are \textbf{BC-only} in this optimized review.
+\end{unitbox}
+
+% =====================================================
+\begin{unitbox}{BC Extension A: Advanced Integration Techniques}
+\textbf{Big Idea:} BC requires students to select integration techniques beyond basic \(u\)-substitution.
+\end{unitbox}
+
+\subtopic{1. Polynomial Long Division}
+
+Use long division when the degree of the numerator is greater than or equal to the degree of the denominator.
+
+Example structure:
+
+\[
+\int \frac{x^2+3x+5}{x+1}\,dx
+\]
+
+First divide:
+
+\[
+\frac{x^2+3x+5}{x+1}=x+2+\frac{3}{x+1}
+\]
+
+Then integrate:
+
+\[
+\int \left(x+2+\frac{3}{x+1}\right)\,dx
+\]
+
+\[
+=\frac{x^2}{2}+2x+3\ln|x+1|+C
+\]
+
+\subtopic{2. Completing the Square}
+
+Use completing the square when the denominator contains an irreducible quadratic.
+
+Example:
+
+\[
+x^2+4x+8=(x+2)^2+4
+\]
+
+Useful forms:
+
+\[
+\int \frac{1}{u^2+a^2}\,du=\frac1a\tan^{-1}\left(\frac{u}{a}\right)+C
+\]
+
+\[
+\int \frac{1}{\sqrt{a^2-u^2}}\,du=\sin^{-1}\left(\frac{u}{a}\right)+C
+\]
+
+\subtopic{3. Integration by Parts}
+
+\[
+\int u\,dv=uv-\int v\,du
+\]
+
+Use LIATE to choose \(u\):
+
+\[
+\text{Logarithmic} \to \text{Inverse trig} \to \text{Algebraic} \to \text{Trig} \to \text{Exponential}
+\]
+
+Common examples:
+
+\[
+\int x e^x\,dx
+\]
+
+\[
+\int x\sin x\,dx
+\]
+
+\[
+\int \ln x\,dx
+\]
+
+\subtopic{4. Partial Fractions}
+
+Use partial fractions for rational functions after factoring the denominator.
+
+\[
+\frac{P(x)}{(x-a)(x-b)}
+=
+\frac{A}{x-a}+\frac{B}{x-b}
+\]
+
+Repeated linear factor:
+
+\[
+\frac{P(x)}{(x-a)^2}
+=
+\frac{A}{x-a}+\frac{B}{(x-a)^2}
+\]
+
+Irreducible quadratic factor:
+
+\[
+\frac{P(x)}{x^2+bx+c}
+=
+\frac{Ax+B}{x^2+bx+c}
+\]
+
+\subtopic{5. Improper Integrals}
+
+Type 1: infinite interval.
+
+\[
+\int_a^\infty f(x)\,dx
+=
+\lim_{b\to\infty}\int_a^b f(x)\,dx
+\]
+
+Type 2: infinite discontinuity.
+
+\[
+\int_a^b f(x)\,dx
+=
+\lim_{t\to c^-}\int_a^t f(x)\,dx+
+\lim_{t\to c^+}\int_t^b f(x)\,dx
+\]
+
+\begin{warningbox}{BC Integration Selection Guide}
+\begin{itemize}[leftmargin=1.5em]
+\item Product of different types of functions \(\Rightarrow\) integration by parts.
+\item Rational function with high-degree numerator \(\Rightarrow\) long division first.
+\item Rational function with factorable denominator \(\Rightarrow\) partial fractions.
+\item Quadratic denominator that does not factor \(\Rightarrow\) complete the square.
+\item Infinite bound or vertical asymptote \(\Rightarrow\) improper integral.
+\end{itemize}
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{BC Extension B: Euler's Method}
+\textbf{Big Idea:} Euler's Method approximates a solution curve using tangent line steps.
+\end{unitbox}
+
+Given
+
+\[
+\frac{dy}{dx}=f(x,y)
+\]
+
+and an initial condition
+
+\[
+(x_0,y_0),
+\]
+
+Euler's Method uses
+
+\[
+y_{\text{new}}=y_{\text{old}}+(\text{slope})(\Delta x)
+\]
+
+where
+
+\[
+\text{slope}=f(x_{\text{old}},y_{\text{old}})
+\]
+
+So the update formula is
+
+\[
+y_{n+1}=y_n+f(x_n,y_n)\Delta x
+\]
+
+\[
+x_{n+1}=x_n+\Delta x
+\]
+
+\begin{warningbox}{Euler's Method Common Mistake}
+Students often use the original initial slope for every step.  
+The slope must be recalculated at each new point.
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{BC Extension C: Logistic Differential Equations}
+\textbf{Big Idea:} Logistic growth models limited growth with a carrying capacity.
+\end{unitbox}
+
+\subtopic{1. Logistic Differential Equation}
+
+\[
+\frac{dy}{dt}=ky\left(1-\frac{y}{L}\right)
+\]
+
+where
+
+\[
+L=\text{carrying capacity}
+\]
+
+\[
+k=\text{growth constant}
+\]
+
+\subtopic{2. Behavior}
+
+\[
+0<y<L \Rightarrow \frac{dy}{dt}>0
+\]
+
+The population increases.
+
+\[
+y>L \Rightarrow \frac{dy}{dt}<0
+\]
+
+The population decreases toward \(L\).
+
+\subtopic{3. Maximum Growth Rate}
+
+For logistic growth,
+
+\[
+\frac{dy}{dt}
+\]
+
+is maximized when
+
+\[
+y=\frac{L}{2}
+\]
+
+\subtopic{4. Logistic Solution Form}
+
+A common solution form is
+
+\[
+y=\frac{L}{1+Ae^{-kt}}
+\]
+
+where \(A\) is determined by the initial condition.
+
+\begin{warningbox}{Logistic Model Interpretation}
+Logistic growth is not unlimited exponential growth.  
+It begins similarly to exponential growth but eventually levels off near the carrying capacity.
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{BC Unit 9: Parametric, Polar, and Vector-Valued Functions}
+\textbf{Big Idea:} Curves can be described using parameters, vectors, or polar coordinates instead of only \(y=f(x)\).
+\end{unitbox}
+
+\subtopic{1. Parametric Equations}
+
+A curve may be written as
+
+\[
+x=x(t),\qquad y=y(t)
+\]
+
+\subtopic{2. Parametric Derivative}
+
+\[
+\frac{dy}{dx}=\frac{dy/dt}{dx/dt}
+\]
+
+provided
+
+\[
+\frac{dx}{dt}\neq0.
+\]
+
+\subtopic{3. Second Derivative for Parametric Equations}
+
+\[
+\frac{d^2y}{dx^2}
+=
+\frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}
+\]
+
+\subtopic{4. Parametric Arc Length}
+
+\[
+L=\int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2}\,dt
+\]
+
+\subtopic{5. Vector-Valued Functions}
+
+\[
+\vec r(t)=\langle x(t),y(t)\rangle
+\]
+
+Velocity:
+
+\[
+\vec v(t)=\vec r'(t)
+\]
+
+Acceleration:
+
+\[
+\vec a(t)=\vec v'(t)=\vec r''(t)
+\]
+
+Speed:
+
+\[
+|\vec v(t)|=\sqrt{(x'(t))^2+(y'(t))^2}
+\]
+
+Total distance:
+
+\[
+\int_a^b |\vec v(t)|\,dt
+\]
+
+Displacement:
+
+\[
+\vec r(b)-\vec r(a)
+\]
+
+\subtopic{6. Polar Coordinates}
+
+\[
+x=r\cos\theta
+\]
+
+\[
+y=r\sin\theta
+\]
+
+\[
+r^2=x^2+y^2
+\]
+
+\[
+\tan\theta=\frac{y}{x}
+\]
+
+\subtopic{7. Polar Slope}
+
+If \(r=f(\theta)\), then
+
+\[
+\frac{dy}{dx}
+=
+\frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}
+\]
+
+where
+
+\[
+x=r\cos\theta,\qquad y=r\sin\theta.
+\]
+
+So
+
+\[
+\frac{dx}{d\theta}=r'\cos\theta-r\sin\theta
+\]
+
+\[
+\frac{dy}{d\theta}=r'\sin\theta+r\cos\theta
+\]
+
+Thus
+
+\[
+\frac{dy}{dx}
+=
+\frac{r'\sin\theta+r\cos\theta}{r'\cos\theta-r\sin\theta}
+\]
+
+\subtopic{8. Polar Area}
+
+Area inside one polar curve:
+
+\[
+A=\frac12\int_\alpha^\beta r^2\,d\theta
+\]
+
+Area between two polar curves:
+
+\[
+A=\frac12\int_\alpha^\beta \left(r_{\text{outer}}^2-r_{\text{inner}}^2\right)d\theta
+\]
+
+\begin{warningbox}{Polar Area Common Mistake}
+Do not use
+
+\[
+\int r\,d\theta.
+\]
+
+Polar area always uses
+
+\[
+\frac12\int r^2\,d\theta.
+\]
+\end{warningbox}
+
+\newpage
+
+% =====================================================
+\begin{unitbox}{BC Unit 10: Infinite Sequences and Series}
+\textbf{Big Idea:} Infinite series are studied through convergence, error control, and function representation.
+\end{unitbox}
+
+\subtopic{1. Sequence vs. Series}
+
+A sequence is a list:
+
+\[
+\{a_n\}
+\]
+
+A series is a sum:
+
+\[
+\sum_{n=1}^{\infty}a_n
+\]
+
+Partial sum:
+
+\[
+S_n=a_1+a_2+\cdots+a_n
+\]
+
+\subtopic{2. Geometric Series}
+
+\[
+\sum_{n=0}^{\infty}ar^n
+\]
+
+Converges if
+
+\[
+|r|<1
+\]
+
+and the sum is
+
+\[
+S=\frac{a}{1-r}
+\]
+
+Diverges if
+
+\[
+|r|\ge1.
+\]
+
+\subtopic{3. nth-Term Test for Divergence}
+
+If
+
+\[
+\lim_{n\to\infty}a_n\neq0
+\]
+
+or the limit does not exist, then
+
+\[
+\sum a_n
+\]
+
+diverges.
+
+\begin{warningbox}{Important}
+If
+
+\[
+\lim_{n\to\infty}a_n=0,
+\]
+
+the series may converge or diverge.  
+The nth-term test cannot prove convergence.
+\end{warningbox}
+
+\subtopic{4. p-Series}
+
+\[
+\sum_{n=1}^{\infty}\frac1{n^p}
+\]
+
+Converges if
+
+\[
+p>1
+\]
+
+Diverges if
+
+\[
+p\le1
+\]
+
+\subtopic{5. Integral Test}
+
+If \(f(x)\) is positive, continuous, and decreasing, and
+
+\[
+a_n=f(n),
+\]
+
+then
+
+\[
+\sum_{n=1}^{\infty}a_n
+\]
+
+and
+
+\[
+\int_1^\infty f(x)\,dx
+\]
+
+either both converge or both diverge.
+
+\subtopic{6. Direct Comparison Test}
+
+If
+
+\[
+0\le a_n\le b_n,
+\]
+
+then:
+
+\[
+\sum b_n \text{ converges} \Rightarrow \sum a_n \text{ converges}
+\]
+
+\[
+\sum a_n \text{ diverges} \Rightarrow \sum b_n \text{ diverges}
+\]
+
+\subtopic{7. Limit Comparison Test}
+
+For positive series:
+
+\[
+L=\lim_{n\to\infty}\frac{a_n}{b_n}
+\]
+
+If
+
+\[
+0<L<\infty,
+\]
+
+then
+
+\[
+\sum a_n
+\]
+
+and
+
+\[
+\sum b_n
+\]
+
+have the same behavior.
+
+\subtopic{8. Alternating Series Test}
+
+For
+
+\[
+\sum (-1)^n b_n
+\]
+
+or
+
+\[
+\sum (-1)^{n+1}b_n,
+\]
+
+the series converges if:
+
+\[
+b_n>0
+\]
+
+\[
+b_n\text{ decreases}
+\]
+
+\[
+\lim_{n\to\infty}b_n=0
+\]
+
+\subtopic{9. Alternating Series Error Bound}
+
+If an alternating series satisfies the conditions of the Alternating Series Test, then
+
+\[
+|R_n|\le b_{n+1}
+\]
+
+\subtopic{10. Ratio Test}
+
+\[
+L=\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|
+\]
+
+\[
+L<1 \Rightarrow \text{absolute convergence}
+\]
+
+\[
+L>1 \Rightarrow \text{divergence}
+\]
+
+\[
+L=1 \Rightarrow \text{inconclusive}
+\]
+
+\subtopic{11. Absolute vs. Conditional Convergence}
+
+\[
+\sum a_n \text{ absolutely converges if } \sum |a_n| \text{ converges.}
+\]
+
+\[
+\sum a_n \text{ conditionally converges if } \sum a_n \text{ converges but } \sum |a_n| \text{ diverges.}
+\]
+
+\subtopic{12. Power Series}
+
+\[
+\sum_{n=0}^{\infty}c_n(x-a)^n
+\]
+
+Radius of convergence:
+
+\[
+R
+\]
+
+Interval of convergence:
+
+\[
+(a-R,a+R)
+\]
+
+Always check endpoints separately.
+
+\subtopic{13. Taylor and Maclaurin Series}
+
+Taylor series centered at \(x=a\):
+
+\[
+f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n
+\]
+
+Maclaurin series centered at \(x=0\):
+
+\[
+f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n
+\]
+
+\subtopic{14. Common Maclaurin Series}
+
+\[
+e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}
+\]
+
+\[
+\sin x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}
+\]
+
+\[
+\cos x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}
+\]
+
+\[
+\frac1{1-x}=\sum_{n=0}^{\infty}x^n,\qquad |x|<1
+\]
+
+\[
+\ln(1+x)=\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{n},\qquad -1<x\le1
+\]
+
+\[
+\tan^{-1}x=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1},\qquad |x|\le1
+\]
+
+\subtopic{15. Lagrange Error Bound}
+
+If \(P_n(x)\) is the Taylor polynomial for \(f(x)\), then
+
+\[
+|R_n(x)|\le \frac{M}{(n+1)!}|x-a|^{n+1}
+\]
+
+where \(M\) is an upper bound for
+
+\[
+|f^{(n+1)}(x)|
+\]
+
+on the interval between \(a\) and \(x\).
+
+\newpage
+
+% =====================================================
+% COVERAGE CHECK
+% =====================================================
+
+\sectiontitle{Part III: AB / BC Coverage Check}
+
+\begin{unitbox}{AB Topics Included}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.2em]
+\item Limits
+\item One-sided limits
+\item Continuity
+\item Discontinuities
+\item Infinite limits
+\item Limits at infinity
+\item Derivative definition
+\item Tangent lines
+\item Basic derivative rules
+\item Product rule
+\item Quotient rule
+\item Chain rule
+\item Implicit differentiation
+\item Inverse function derivatives
+\item Exponential derivatives
+\item Logarithmic derivatives
+\item Related rates
+\item Motion
+\item Linear approximation
+\item L'Hospital's Rule
+\item Rolle's Theorem
+\item Mean Value Theorem
+\item Extreme Value Theorem
+\item First derivative test
+\item Second derivative test
+\item Concavity
+\item Optimization
+\item Riemann sums
+\item Definite integrals
+\item FTC Part 1
+\item FTC Part 2
+\item Basic antiderivatives
+\item \(u\)-substitution
+\item Slope fields
+\item Separable differential equations
+\item Exponential growth / decay
+\item Average value
+\item Area between curves
+\item Volume by cross sections
+\item Disk / washer method
+\item Displacement / total distance
+\end{itemize}
+\end{multicols}
+\end{unitbox}
+
+\begin{unitbox}{BC-Only Topics Included}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.2em]
+\item Polynomial long division integration
+\item Completing the square integrals
+\item Integration by parts
+\item Partial fractions
+\item Improper integrals
+\item Euler's Method
+\item Logistic differential equations
+\item Parametric equations
+\item Parametric first derivative
+\item Parametric second derivative
+\item Parametric arc length
+\item Vector-valued functions
+\item Velocity vectors
+\item Acceleration vectors
+\item Speed
+\item Displacement
+\item Total distance
+\item Polar coordinates
+\item Polar slope
+\item Polar area
+\item Sequences
+\item Infinite series
+\item Geometric series
+\item nth-term test
+\item p-series
+\item Integral test
+\item Direct comparison
+\item Limit comparison
+\item Alternating series
+\item Alternating series error bound
+\item Ratio test
+\item Absolute convergence
+\item Conditional convergence
+\item Power series
+\item Radius of convergence
+\item Interval of convergence
+\item Taylor series
+\item Maclaurin series
+\item Lagrange error bound
+\end{itemize}
+\end{multicols}
+\end{unitbox}
+
+\begin{warningbox}{Remaining Topics Worth Adding Later}
+This optimized summary covers the major AB and BC testable topics.  
+For an even stronger final version, the following can be added as extra pages:
+
+\begin{itemize}[leftmargin=1.5em]
+\item A one-page derivative formula sheet.
+\item A one-page integral formula sheet.
+\item A series test decision flowchart.
+\item A motion interpretation table.
+\item A polar / parametric formula mini-sheet.
+\item A common FRQ template page.
+\item Calculator-active vs. non-calculator strategy page.
+\end{itemize}
+\end{warningbox}
+
+\end{document}
